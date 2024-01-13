@@ -31,7 +31,7 @@ function Board() {
 
   function renderSquare(i) {
     return (
-      <Button colorScheme="teal" width="50px" height="50px" onClick={() => selectSquare(i)}>
+      <Button colorScheme='teal' width='50px' height='50px' onClick={() => selectSquare(i)}>
         {squares[i]}
       </Button>
     );
@@ -39,7 +39,7 @@ function Board() {
 
   return (
     <VStack spacing={5}>
-      <Alert justifyContent="center" status={winner ? 'success' : 'info'}>
+      <Alert justifyContent='center' status={winner ? 'success' : 'info'}>
         <AlertIcon />
         <AlertTitle>{status}</AlertTitle>
       </Alert>
@@ -64,18 +64,20 @@ function Board() {
         restart
       </Button>
       <AlertDialog
-        motionPreset="slideInBottom"
+        motionPreset='slideInBottom'
         isOpen={isOpen}
         leastDestructiveRef={cancelRef}
         onClose={onClose}>
         <AlertDialogOverlay>
           <AlertDialogContent>
-            <AlertDialogHeader fontSize="lg" fontFamily={'georgia'} fontWeight="bold" textAlign={'center'}>
+            <AlertDialogHeader fontSize='lg' fontFamily={'georgia'} fontWeight='bold' textAlign={'center'}>
               Game Over
             </AlertDialogHeader>
-            <AlertDialogBody fontSize='lg' fontFamily={'monospace'} textAlign={'center'}> {status} </AlertDialogBody>
+            <AlertDialogBody fontSize='lg' fontFamily={'monospace'} textAlign={'center'}> 
+              {status} 
+            </AlertDialogBody>
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose} size='lg' colorScheme="blackAlpha">
+              <Button ref={cancelRef} onClick={onClose} size='lg' colorScheme='blackAlpha'>
                 Close
               </Button>
             </AlertDialogFooter>
@@ -89,7 +91,7 @@ function Board() {
 function Game() {
   const bgColor = useColorModeValue('gray.200', 'gray.700');
   return (
-    <Box p={4} bg={bgColor} shadow={'xl'} borderRadius={'lg'} borderWidth="1px">
+    <Box p={4} bg={bgColor} shadow={'xl'} borderRadius={'lg'} borderWidth='1px'>
         <Board />
     </Box>
   );
